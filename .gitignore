@@ -1,0 +1,21 @@
+node_modules/
+out/
+release/
+.test-mc/
+*.log
+.DS_Store
+*.bak
+*.tmp
+
+
+# Build outputs, dependencies and caches are reproducible; keep them out of source backup
+/node_modules/
+/out/
+/release*/
+/mod/.gradle/
+/mod/.gradle-user-home/
+/mod/build/
+*.class
+*.jar
+.env
+.env.*

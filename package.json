@@ -1,0 +1,77 @@
+{
+  "name": "odissey-client",
+  "version": "1.0.0",
+  "description": "Odissey Client - Launcher de Minecraft con cuentas Microsoft y perfiles offline",
+  "author": "Odissey Client",
+  "main": "./out/main/index.js",
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "dist": "npm run build && electron-builder --win",
+    "test:launch": "tsx scripts/test-launch.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.3.0",
+    "@heroicons/react": "^2.2.0",
+    "adm-zip": "^0.6.1"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "autoprefixer": "^10.6.1",
+    "electron": "^44.9.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^6.0.0",
+    "postcss": "^8.5.31",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  },
+  "build": {
+    "appId": "com.odissey.client",
+    "productName": "Odissey Client",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "resources",
+        "to": "resources",
+        "filter": [
+          "icon.png"
+        ]
+      }
+    ],
+    "win": {
+      "icon": "build/icon.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "include": "build/installer.nsh",
+      "installerSidebar": "build/installerSidebar.bmp",
+      "installerLanguages": [
+        "es_ES"
+      ],
+      "language": "3082",
+      "perMachine": false,
+      "runAfterFinish": true
+    }
+  }
+}

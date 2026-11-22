@@ -1,0 +1,24 @@
+{
+	"schemaVersion": 1,
+	"id": "odissey",
+	"version": "${version}",
+	"name": "Odissey Client",
+	"description": "HUD y menú in-game de Odissey Client.",
+	"authors": [
+		"Odissey Client"
+	],
+	"license": "All-Rights-Reserved",
+	"icon": "assets/odissey/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.odissey.client.OdisseyClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
